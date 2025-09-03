@@ -23,12 +23,10 @@ The goal is to offer a cost-effective and scalable platform for monitoring and m
 - Conversion of annotations to YOLO format.  
 
 2. **Model Training (YOLOv8)**  
-   - Model trained on the prepared dataset using Ultralytics YOLOv8.  
-   - Data augmentation techniques applied (flipping, scaling, rotation).  
+   - Model trained on the prepared dataset using Ultralytics YOLOv8.    
    - Evaluation based on standard object detection metrics.  
 
-3. **Model Export and Deployment**
-- Trained model exported to ONNX and converted to a TensorRT engine.  
+3. **Model Deployment**
    - Deployment on NVIDIA Jetson Orin Nano for optimized inference.  
 
 4. **Inference Application**  
@@ -41,14 +39,10 @@ The goal is to offer a cost-effective and scalable platform for monitoring and m
 
 ### Training Environment
 - Python 3.8+  
-- PyTorch with CUDA support  
-- Ultralytics YOLOv8  
-- OpenCV  
-- CUDA and cuDNN  
+- Ultralytics YOLOv8 
 
 ### Deployment (Jetson Orin Nano)  
 - NVIDIA JetPack SDK (with CUDA, cuDNN, TensorRT)  
-- ONNX Runtime / TensorRT  
 - OpenCV  
 - Ultralytics YOLOv8  
 
@@ -58,8 +52,8 @@ The goal is to offer a cost-effective and scalable platform for monitoring and m
 
 ### 1. Clone Repository  
 ```bash
-git clone https://github.com/your-username/solar-panel-detection-yolov8.git
-cd solar-panel-detection-yolov8
+git clone https://github.com/drishtigupta05/Solar-Panel-Detection-using-Aerial-Imagery.git
+cd Solar-Panel-Detection-using-Aerial-Imagery
 ```
 
 ### 2. Install Dependencies  
@@ -69,20 +63,13 @@ pip install -r requirements.txt
 
 ### 3. Train the Model
 ```bash
-yolo detect train data=data.yaml model=yolov8n.pt epochs=50 imgsz=640
+!yolo task=detect mode=train model=yolov8m-obb.pt data=/content/Senior-Project-Ver-2-1/data.yaml epochs=100 imgsz=640
 ```
 
 ### 4. Export the Model for Deployment
 ```bash
 yolo export model=best.pt format=onnx
 ```
-
-### 5. Run Inference on Jetson Orin Nano
-```bash
-python jetson_infer.py --model best.onnx --input test_images/
-```
-
-***
 
 ## Results
 - Performance tested using **Precision, Recall, and mAP** metrics.
@@ -101,7 +88,6 @@ solar-panel-detection-yolov8/
  ┣ models/
  ┃ ┣ best.pt
  ┣ inference_results/
- ┣ jetson_infer.py
  ┣ train.yaml
  ┣ requirements.txt
  ┗ README.md
@@ -131,10 +117,8 @@ solar-panel-detection-yolov8/
 
 *** 
 
-**Author**: [Your Name]  
-**Contact**: your.email@example.com  
+**Author**: [Drishti Gupta]  
+**Contact**: drigup73@example.com  
 **Year**: 2025  
 
 *** 
-
-Would you prefer I structure this in an **academic-report style (with sections like Objectives, Methodology, Results, and Conclusion)** so it can be directly inserted into an academic submission?
