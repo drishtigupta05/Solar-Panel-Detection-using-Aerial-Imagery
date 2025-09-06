@@ -50,15 +50,20 @@ The goal is to offer a cost-effective and scalable platform for monitoring and m
 
 ## Installation  
 
-### 1. Clone Repository  
+### 1. Install libraries
 ```bash
-git clone https://github.com/drishtigupta05/Solar-Panel-Detection-using-Aerial-Imagery.git
-cd Solar-Panel-Detection-using-Aerial-Imagery
+!pip install ultralytics
+!pip install roboflow pillow pillow-heif==0.6.0 --quiet
 ```
 
-### 2. Install Dependencies  
+### 2. Import dataset into runtime
 ```bash
-pip install -r requirements.txt
+from roboflow import Roboflow
+
+rf = Roboflow(api_key="kQwcl0wNa9epr4hrH6HA")
+project = rf.workspace("nalerks-senior-project").project("senior-project-ver-2")
+version = project.version(1)
+dataset = version.download("yolov8-obb")
 ```
 
 ### 3. Train the Model
