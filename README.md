@@ -78,23 +78,6 @@ yolo export model=best.pt format=onnx
 
 ***
 
-## Project Structure
-
-```
-solar-panel-detection-yolov8/
- ┣ dataset/
- ┃ ┣ images/
- ┃ ┣ labels/
- ┣ models/
- ┃ ┣ best.pt
- ┣ inference_results/
- ┣ train.yaml
- ┣ requirements.txt
- ┗ README.md
-```
-
-***
-
 ## Applications
 - Automated mapping of solar installations.
 - Infrastructure monitoring and renewable energy analysis.
