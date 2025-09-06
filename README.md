@@ -81,6 +81,9 @@ yolo export model=best.pt format=onnx
 - Inference tests illustrate readiness for near real-time use on edge hardware.
 - Bounding box visualizations emphasize accurate detection of solar panels in aerial imagery.
 
+https://github.com/user-attachments/assets/323624e5-dbc0-49d8-8d03-0418b37aa135
+
+
 ***
 
 ## Applications
